@@ -69,9 +69,22 @@ export default class App extends React.Component {
       info = {
         pdfName: this.state.nation,
         userInfo: {
-          name: 'Massimo',
-          surname: 'Vlacancich',
-          sex: 'la france!!'
+          name: 'Alfagor',
+          surname: 'McMillan',
+          dob: new Date('1990-01-01'), // I don't know why you used new, just cmd c cmd v
+          birthLoc: 'Paris',
+          reasonNum: 7,
+          domicilio: {
+            city: 'Paris',
+            address: '46 Rue Popincourt',
+            p_code: '75011'
+          },
+          location: 'Paris',
+          subscriptionDate : {
+            day:    'today',
+            hours:  '16',
+            minutes: '43'
+          }
         }
       }
     }
