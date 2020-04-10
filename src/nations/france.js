@@ -1,5 +1,14 @@
+import React from 'react';
 import {rgb} from 'pdf-lib';
 
+export function FranceForm(props) {
+
+    return(
+        <div>
+            FranceForm here!
+        </div>
+    )
+}
 
 export function enrichPdfFrance(pdfDoc, props) {
     
@@ -7,7 +16,9 @@ export function enrichPdfFrance(pdfDoc, props) {
     const firstPage = pages[0]
 
     // Get the width and height of the first page
-    const { width, height } = firstPage.getSize()
+    // height: top left corner, subtract to go down
+    const size = firstPage.getSize()
+    const height = size.height
 
     // DRAW NAME
     firstPage.drawText(props.userInfo.name + ' ' + props.userInfo.surname, {
@@ -22,6 +33,13 @@ export function enrichPdfFrance(pdfDoc, props) {
         y: height - 200,
         size: 32,
         color: rgb(0.95, 0.1, 0.1),
+    })
+
+    // Address
+    firstPage.drawText(props.userInfo.address,{
+        x: 130,
+        y: height - 100,
+        size: 12
     })
 
     // Serialize the PDFDocument to bytes (a Uint8Array)
