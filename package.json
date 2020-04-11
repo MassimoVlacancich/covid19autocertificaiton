@@ -10,10 +10,14 @@
     "file-saver": "^2.0.2",
     "pdf-lib": "^1.4.1",
     "react": "^16.13.1",
+    "react-device-detect": "^1.11.14",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.3.1",
+    "react-mobile-datepicker": "^4.0.2",
     "react-number-format": "^4.4.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-signature-canvas": "^1.0.3",
+    "react-time-picker": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

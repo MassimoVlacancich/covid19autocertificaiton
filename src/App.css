@@ -2,6 +2,82 @@
   max-width: 960px;
 }
 
+.intro{
+  margin-bottom: 30px;
+}
+
+.footer{
+  background-color: #d0d0d0;
+}
+
+.footer .footer-info{
+  padding: 20px;
+  text-align: center;
+}
+
+.footer .footer-info .socials{
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.footer .footer-info .socials a{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.footer .footer-info .feedback{
+  font-size: 0.7em
+}
+
+.footer .footer-info .help{
+  font-size: 0.9em
+}
+
+.disclaimer{
+  font-size: 0.6em !important;
+  color: black !important;
+}
+
+
+.app-header{
+  margin-bottom: -60px;
+}
+
+.app-header .title{
+  margin-bottom: 20px;
+}
+
+.app-header .select-country{
+  padding:20px;
+  max-width: 256px;
+  margin:auto;
+}
+
+.app-header .title{
+  padding-bottom: -3em !important;
+}
+
 .form-field-error{
   color: red;
+}
+
+.suggestion{
+  font-size: 0.9em;
+  color:orange;
+}
+
+.disclaimer{
+  font-size: 0.8em;
+  color:red;
+}
+
+.reset-cache{
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: -20px;
+}
+
+.redraw-signature{
+  visibility: hidden;
 }
