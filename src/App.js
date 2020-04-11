@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {getPdf} from './services/edit-pdf'
-import {enrichPdf} from './services/enrich-pdf'
+import {NationForm} from './services/form-builder'
+import {getIntro} from './services/utils'
 
 export default class App extends React.Component {
 
@@ -10,122 +9,48 @@ export default class App extends React.Component {
     super(props)
 
     this.state = {
-      nation: 'spain'
+      nation: 'italy',
+      intro: getIntro('italy')
     };
 
-    this.handleChange = this.handleNationChange.bind(this);
-    this.handleSubmit = this.handleNationSubmit.bind(this);
-
-    this.pdfReady = this.pdfReady.bind(this)
+    this.handleNationChange = this.handleNationChange.bind(this);
   }
 
   componentDidMount() {
     
   }
 
-  // TODO pass obtained fields data
-  generatePdf() {
-
-    var info = {}
-
-    // different mock data depending on nation
-    if(this.state.nation === 'italy') {
-
-      // TODO build correct form and get data - mock for now
-      info = {
-        pdfName: this.state.nation,
-        userInfo: {
-          name: 'Massimo',
-          surname: 'Vlacancich',
-          dob: new Date('1995-03-10'),
-          birthLoc: 'Cirie, Torino',
-          residence: {
-            city: 'Torino',
-            address: 'Via Canonico Maffei 45, San Maurizio Canavese'
-          },
-          domicilio: {
-            city: 'Torino',
-            address: 'Via Canonico Maffei 45, San Maurizio Canavese'
-          },
-          idDocument: 'Carta di indentita',
-          documentNum: '2345545232',
-          documentReleaseBy: 'Comune di San Maurizio',
-          documentReleaseDate: new Date('1995-03-10'),
-          telephone: '3465792372',
-          movement: {
-            startAddress: 'Via Canonico Maffei 45',
-            destination: 'supermecato di zona',
-            startRegion: 'Piemonte',
-            destinationRegion: 'Piemonte',
-          },
-          provvedimenti: 'some text here - TODO wrap',
-          reasonNum: 1,
-          declaration: 'bla bla bla bla bla - TODO wrap'
-        }
-      }
-
-    }
-    else if(this.state.nation === 'france'){
-      info = {
-        pdfName: this.state.nation,
-        userInfo: {
-          name: 'Massimo',
-          surname: 'Vlacancich',
-          sex: 'la france!!'
-        }
-      }
-    }
-
-    getPdf(this.state.nation).then((doc) => {
-      enrichPdf(this.state.nation, doc, info, this.pdfReady)
-    })
-  }
-
-  pdfReady(pdfUrl){
-    console.log(pdfUrl)
-    window.open(pdfUrl);
-  }
-
   handleNationChange(event) {    
-    this.setState({nation: event.target.value});  
+    this.setState({
+      nation: event.target.value,
+      intro: getIntro(event.target.value)
+    });  
   }
-
-  handleNationSubmit(event) {
-    event.preventDefault();
-    this.generatePdf()
-  }
-
 
   render(){
+
     return(
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className="container">
 
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              <select value={this.state.nation} onChange={this.handleChange}>            
-                <option value="italy">Italy</option>
-                <option value="france">France</option>
-                <option value="spain">Spain</option>
-              </select>
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-          
-
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
+        <div className="py-5 text-center">
+          <img className="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"/>
+          <h2>covid19-Autocertification</h2>
+          <p className="lead">
+            {this.state.intro}
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+          <div className="input-group">
+            <select className="custom-select" value={this.state.nation} onChange={this.handleNationChange}>            
+              <option value="italy">Italy</option>
+              <option value="france">France</option>
+            </select>
+          </div>
+        
+        </div>       
+
+        <NationForm
+          nation={this.state.nation} />
+
       </div>
     )
   }

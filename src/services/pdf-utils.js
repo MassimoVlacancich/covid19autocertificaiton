@@ -21,5 +21,4 @@ export function getPdf(nation) {
         console.error(error);
         return null
     });
-
 }
