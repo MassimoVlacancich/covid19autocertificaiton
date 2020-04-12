@@ -8,18 +8,25 @@ export default class App extends React.Component {
   constructor(props){
     super(props)
 
+    // try top get cached data
+    var cachedNationChoice = localStorage.getItem('nationChoice');
+    if(cachedNationChoice === null) {
+      cachedNationChoice = 'italy'
+    }
+
     this.state = {
-      nation: 'france'
+      nation: cachedNationChoice
     };
 
     this.handleNationChange = this.handleNationChange.bind(this);
   }
 
   componentDidMount() {
-    
+    localStorage.setItem('nationChoice', this.state.nation);
   }
 
-  handleNationChange(event) {    
+  handleNationChange(event) {
+    localStorage.setItem('nationChoice', event.target.value);    
     this.setState({
       nation: event.target.value,
     });  
@@ -35,7 +42,8 @@ export default class App extends React.Component {
         <div className="container">
 
           <div className="py-5 text-center app-header">
-            <img className="d-block mx-auto mb-4" src="logo.png" alt="" width="128" height="128"/>
+            <img className="d-block mx-auto mb-4"
+              src={process.env.PUBLIC_URL + '/logo.png'} alt="" width="128" height="128"/>
             
             <h2 className="title">covid19-Autocertification</h2>
             
@@ -72,13 +80,13 @@ export default class App extends React.Component {
               <div className="row">
                 <div className="socials">
                   <a href="https://www.linkedin.com/in/massimovlacancich/" target="_blank" rel="noopener noreferrer">
-                    <img alt="linkedin" src="icons/linkedin.png" height="32" width="32" />
+                    <img alt="linkedin" src={process.env.PUBLIC_URL + '/icons/linkedin.png'} height="32" width="32" />
                   </a>
                   <a href="mailto:massimovlacancich@gmail.com">
-                    <img alt="gmail" src="icons/gmail.png" height="40" width="40" />
+                    <img alt="gmail" src={process.env.PUBLIC_URL + '/icons/gmail.png'} height="40" width="40" />
                   </a>
                   <a href="https://www.instagram.com/massimotarasso/" target="_blank" rel="noopener noreferrer">
-                    <img alt="ig" src="icons/instagram.png" height="32" width="32" />
+                    <img alt="ig" src={process.env.PUBLIC_URL + '/icons/instagram.png'} height="32" width="32" />
                   </a>
                 </div>
               </div>

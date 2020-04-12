@@ -5,7 +5,7 @@ export function LoadingSpinner(props) {
     return (
         <div className="loading">
             <div className="visual">
-                <img className="pulse" alt="Loading..." src="icons/pdf_icon.png" />
+                <img className="pulse" alt="Loading..." src={process.env.PUBLIC_URL + '/icons/pdf_icon.png'} />
                 {props.loadingText}
             </div>
         </div>
