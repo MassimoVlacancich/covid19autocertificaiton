@@ -80,13 +80,13 @@ export default class App extends React.Component {
               <div className="row">
                 <div className="socials">
                   <a href="https://www.linkedin.com/in/massimovlacancich/" target="_blank" rel="noopener noreferrer">
-                    <img alt="linkedin" src={process.env.PUBLIC_URL + '/icons/linkedin.png'} height="32" width="32" />
+                    <img alt="linkedin" src={process.env.PUBLIC_URL + '/linkedin.png'} height="32" width="32" />
                   </a>
                   <a href="mailto:massimovlacancich@gmail.com">
-                    <img alt="gmail" src={process.env.PUBLIC_URL + '/icons/gmail.png'} height="40" width="40" />
+                    <img alt="gmail" src={process.env.PUBLIC_URL + '/gmail.png'} height="40" width="40" />
                   </a>
                   <a href="https://www.instagram.com/massimotarasso/" target="_blank" rel="noopener noreferrer">
-                    <img alt="ig" src={process.env.PUBLIC_URL + '/icons/instagram.png'} height="32" width="32" />
+                    <img alt="ig" src={process.env.PUBLIC_URL + '/instagram.png'} height="32" width="32" />
                   </a>
                 </div>
               </div>
