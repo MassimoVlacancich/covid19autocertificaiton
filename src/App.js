@@ -45,7 +45,7 @@ export default class App extends React.Component {
             <img className="d-block mx-auto mb-4"
               src={process.env.PUBLIC_URL + '/logo.png'} alt="" width="128" height="128"/>
             
-            <h2 className="title">covid19-Autocertification</h2>
+            <h2 className="title">covid19-Selfcertification</h2>
             
             <div className="select-country">
               <label htmlFor="selectCountry">Select your country</label>

@@ -196,19 +196,19 @@ export function FrancePersonalFormHook(props) {
                         }
                     </div>
                     <div className="col-md-6 mb-3">
-                        <label htmlFor="lastName">Nom de famille</label>
+                        <label htmlFor="lastName">Prénom</label>
                         <input 
                             type="text" 
                             className="form-control" 
                             id="surname" 
-                            placeholder="Nom de famille" 
+                            placeholder="Prénom" 
                             name="surname"
                             defaultValue={props.cachedData ? props.cachedData.surname : ''}
                             ref={register({required: true})} 
                         />
                         {errors.surname &&
                             <div className="form-field-error">
-                                <i>Entrez votre nom de famille</i>
+                                <i>Entrez votre prénom</i>
                             </div>
                         }
                     </div>
@@ -374,7 +374,7 @@ export function FrancePersonalFormHook(props) {
                             </div>
                         }
                         {isMobile &&
-                            <p className="suggestion">(Android: ouvrez et cliquez sur l'année en haut à gauche pour sélectionner l'année)</p>
+                            <p className="suggestion">(Android:ouvrez et cliquez sur l'année en haut à gauche pour sélectionner l'année)</p>
                         }
                     </div>
                     <div className="col-md-4 mb-3">
@@ -476,24 +476,7 @@ export function FranceEmployerFormHook(props) {
                 <h4 className="mb-3">Employeur</h4>
                 <div className="row">
                     <div className="col-md-3 mb-3">
-                        <label htmlFor="employerName">Nom de l’employeur</label>
-                        <input 
-                            type="text" 
-                            className="form-control" 
-                            id="employerName" 
-                            placeholder="Nom" 
-                            name="employerName"
-                            defaultValue={props.cachedData ? props.cachedData.employerName : ''}
-                            ref={register({required: true, maxLength: 80})} 
-                        />
-                        {errors.employerName &&
-                            <div className="form-field-error">
-                                <i>Entrez le nom de l’employeur</i>
-                            </div>
-                        }
-                    </div>
-                    <div className="col-md-3 mb-3">
-                        <label htmlFor="employerSurname">Prénom de l’employeur</label>
+                        <label htmlFor="employerSurname">Nom de l’employeur</label>
                         <input 
                             type="text" 
                             className="form-control" 
@@ -504,6 +487,23 @@ export function FranceEmployerFormHook(props) {
                             ref={register({required: true, maxLength: 80})} 
                         />
                         {errors.employerSurname &&
+                            <div className="form-field-error">
+                                <i>Entrez le nom de l’employeur</i>
+                            </div>
+                        }
+                    </div>
+                    <div className="col-md-3 mb-3">
+                        <label htmlFor="employerName">Prénom de l’employeur</label>
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            id="employerName" 
+                            placeholder="Nom" 
+                            name="employerName"
+                            defaultValue={props.cachedData ? props.cachedData.employerName : ''}
+                            ref={register({required: true, maxLength: 80})} 
+                        />
+                        {errors.employerName &&
                             <div className="form-field-error">
                                 <i>Entrez le prénom de l’employeur</i>
                             </div>
@@ -532,17 +532,17 @@ export function FranceEmployerFormHook(props) {
                 <h4 className="mb-3">Informations personnelles</h4>
                 <div className="row">
                     <div className="col-md-6 mb-3">
-                        <label htmlFor="firstName">Nom</label>
+                        <label htmlFor="surname">Nom</label>
                         <input 
                             type="text" 
                             className="form-control" 
-                            id="name" 
+                            id="surname" 
                             placeholder="Nom" 
-                            name="name"
-                            defaultValue={props.cachedData ? props.cachedData.name : ''}
+                            name="surname"
+                            defaultValue={props.cachedData ? props.cachedData.surname : ''}
                             ref={register({required: true})} 
                         />
-                        {errors.name &&
+                        {errors.surname &&
                             <div className="form-field-error">
                                 <i>Entrez votre nom</i>
                             </div>
@@ -553,13 +553,13 @@ export function FranceEmployerFormHook(props) {
                         <input 
                             type="text" 
                             className="form-control" 
-                            id="surname" 
+                            id="name" 
                             placeholder="Prénom" 
-                            name="surname"
-                            defaultValue={props.cachedData ? props.cachedData.surname : ''}
+                            name="name"
+                            defaultValue={props.cachedData ? props.cachedData.name : ''}
                             ref={register({required: true})} 
                         />
-                        {errors.surname &&
+                        {errors.name &&
                             <div className="form-field-error">
                                 <i>Entrez votre prénom</i>
                             </div>
@@ -810,7 +810,7 @@ export function enrichPdfFrancePersonal(pdfDoc, props) {
     const height = size.height
 
     // DRAW NAME
-    firstPage.drawText(props.name + ' ' + props.surname, {
+    firstPage.drawText(props.surname + ' ' + props.name, {
         x: 120,
         y: height - 156,
         size: 10,
@@ -983,7 +983,7 @@ export function enrichPdfFranceEmployer(pdfDoc, props) {
     const height = size.height
 
     // DRAW EMPLOYER NAME
-    firstPage.drawText(props.employerName + ' ' + props.employerSurname, {
+    firstPage.drawText(props.employerSurname + ' ' + props.employerName, {
         x: 223,
         y: height - 196,
         size: 10,
@@ -998,16 +998,16 @@ export function enrichPdfFranceEmployer(pdfDoc, props) {
         color: blue,
     })
 
-    // DRAW NAME
-    firstPage.drawText(props.name, {
+    // DRAW SURNNAME
+    firstPage.drawText(props.surname, {
         x: 108,
         y: height - 332,
         size: 10,
         color: blue,
     })
 
-    // DRAW SURNAME
-    firstPage.drawText(props.surname, {
+    // DRAW NAME
+    firstPage.drawText(props.name, {
         x: 118,
         y: height - 356,
         size: 10,
