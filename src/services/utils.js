@@ -5,7 +5,7 @@ export function Intro(props) {
     if(props.nation === 'italy'){
         return(
             <div>
-                Questo sito è nato con l'intento di auitare i cittadini ad ottenere un autocertificazione per il proprio stato in modo semplice e veloce.
+                Questo sito è nato con l'intento di auitare i cittadini ad <b>ottenere un autocertificazione per il proprio stato in modo semplice e veloce.</b>
                 <br/>
                 <u>Il sito ricorda i campi immessi per rendere piu' rapido il riempimento del form la volta successiva </u>
                 <br/>
@@ -14,7 +14,21 @@ export function Intro(props) {
                 </div>
             </div>
         )
-    }else{
+    }
+    else if(props.nation === 'france'){
+        return(
+            <div>
+                Ce site a été créé dans le but d'aider les citoyens à <b>obtenir une auto-certification pour leur état de manière simple et rapide.</b>
+                <br/>
+                <u>Le site se souvient des champs saisis pour accélérer le remplissage du formulaire la prochaine fois</u>
+                <br/>
+                <div className="disclaimer">
+                   <i>le site n'utilise pas de cookies et n'enregistre aucune information personnelle, les champs renseignés sont temporairement enregistrés dans la mémoire de votre appareil</i>
+                </div>
+            </div>
+        )
+    }
+    else{
         return (
             <div>
                 This website was born with the intention of helping citiziend to easily obtain the autocertificaiton for their country.
@@ -31,7 +45,7 @@ export function dataURItoArrayBuffer(dataURI) {
   var byteString = atob(dataURI.split(',')[1]);
 
   // separate out the mime component
-  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+//   var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
 
   // write the bytes of the string to an ArrayBuffer
   var ab = new ArrayBuffer(byteString.length);

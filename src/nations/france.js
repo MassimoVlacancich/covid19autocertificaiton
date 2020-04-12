@@ -3,12 +3,10 @@ import {rgb} from 'pdf-lib';
 import './france.css'
 import '../App.css'
 import {isMobile} from "react-device-detect";
-import {StandardFonts} from 'pdf-lib';
 import {getPdf, createAndDownloadBlobFile} from '../services/pdf-utils'
 import {dataURItoArrayBuffer} from '../services/utils'
 import {useForm} from 'react-hook-form';
 import {LoadingSpinner} from '../components/loading-spinner/loading-spinner'
-import TimePicker from 'react-time-picker';
 import SignatureCanvas from 'react-signature-canvas'
 
 export class FranceForm extends React.Component {
@@ -51,7 +49,7 @@ export class FranceForm extends React.Component {
 
     generatePdf(formData) {
         getPdf('france_' + this.state.formType).then((doc) => {
-            if(this.state.formType == 'personal') {
+            if(this.state.formType === 'personal') {
                 enrichPdfFrancePersonal(doc, formData).then((pdfBytes) =>
                     this.pdfReady(pdfBytes)
                 )
@@ -128,11 +126,11 @@ export class FranceForm extends React.Component {
                     </div>
                 }
                 
-                {this.state.formType == 'personal' &&
+                {this.state.formType === 'personal' &&
                     <FrancePersonalFormHook cachedData={this.state.cachedData} callback={this.formSumbitted}/>
                 }
 
-                {this.state.formType == 'employer' &&
+                {this.state.formType === 'employer' &&
                     <FranceEmployerFormHook cachedData={this.state.cachedData} callback={this.formSumbitted}/>
                 }
 
@@ -142,7 +140,7 @@ export class FranceForm extends React.Component {
 }
 
 export function FrancePersonalFormHook(props) {
-    const { register, handleSubmit, errors, watch, setValue } = useForm();
+    const { register, handleSubmit, errors, setValue } = useForm();
     const onSubmit = data => props.callback(data);
 
     var signaturePad = {}
@@ -440,7 +438,7 @@ export function FrancePersonalFormHook(props) {
 
 // TODO
 export function FranceEmployerFormHook(props) {
-    const { register, handleSubmit, errors, watch, setValue } = useForm();
+    const { register, handleSubmit, errors, setValue } = useForm();
     const onSubmit = data => props.callback(data);
 
     var signaturePad = {}
@@ -903,6 +901,14 @@ export function enrichPdfFrancePersonal(pdfDoc, props) {
             firstPage.drawText('X', {
                 x: 55,
                 y: height - 582,
+                size: 16,
+                color: rgb(0.95, 0.1, 0.1),
+            })
+            break
+        default:
+            firstPage.drawText('X', {
+                x: 55,
+                y: height - 316,
                 size: 16,
                 color: rgb(0.95, 0.1, 0.1),
             })
