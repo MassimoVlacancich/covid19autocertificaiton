@@ -202,7 +202,7 @@ export function ItalyFormHook(props) {
                             </div>
                         }
                         {isMobile &&
-                            <p className="suggestion">(apri e click sull anno in alto a sinistra per selezionare l'anno)</p>
+                            <p className="suggestion">(Android: apri e click sull anno in alto a sinistra per selezionare l'anno)</p>
                         }
                     </div>
                     <div className="col-md-6 mb-3">
@@ -286,7 +286,7 @@ export function ItalyFormHook(props) {
                             </div>
                         }
                         {isMobile &&
-                            <p className="suggestion">(apri e click sull anno in alto a sinistra per selezionare l'anno)</p>
+                            <p className="suggestion">(Android: apri e click sull anno in alto a sinistra per selezionare l'anno)</p>
                         }
                     </div>
                 </div>
