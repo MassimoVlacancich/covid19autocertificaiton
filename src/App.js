@@ -37,8 +37,6 @@ export default class App extends React.Component {
     return(
       <div>
 
-
-
         <div className="container">
 
           <div className="py-5 text-center app-header">
@@ -53,6 +51,7 @@ export default class App extends React.Component {
                 <select className="custom-select" value={this.state.nation} onChange={this.handleNationChange}>            
                   <option value="italy">Italia</option>
                   <option value="france">France</option>
+                  <option value="add">Add a country</option>
                 </select>
               </div>
             </div>
@@ -73,7 +72,7 @@ export default class App extends React.Component {
               Created by Massimo Vlacancich
               <div>
                 <i className="feedback">
-                  Contact me with your feedback! I will happily add your state if missing
+                  Contact me with your feedback! I will happily add your country if missing.
                 </i>
               </div>
 

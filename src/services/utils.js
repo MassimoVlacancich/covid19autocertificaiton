@@ -18,9 +18,9 @@ export function Intro(props) {
     else if(props.nation === 'france'){
         return(
             <div>
-                Ce site a été créé dans le but d'aider les citoyens à <b>obtenir une auto-certification pour leur état de manière simple et rapide.</b>
+                <b>Ce site a été créé dans l'intention d'aider les citoyens à créer leur attestation de déplacement de manière simple et rapide.</b>
                 <br/>
-                <u>Le site se souvient des champs saisis pour accélérer le remplissage du formulaire la prochaine fois</u>
+                <u> site n'utilise pas de cookies et n'enregistre aucune information personnelle, les champs renseignés sont temporairement enregistrés dans la mémoire de votre appareil</u>
                 <br/>
                 <div className="disclaimer">
                    <i>le site n'utilise pas de cookies et n'enregistre aucune information personnelle, les champs renseignés sont temporairement enregistrés dans la mémoire de votre appareil</i>

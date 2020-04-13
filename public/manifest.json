@@ -1,7 +1,7 @@
 {
-  "short_name": "covid-Autocert",
-  "name": "covid19-Autocertification",
-  "description": "covid19-Autocertification helps you generate and sign the autocertification for your country, remembering the fields for the next time to make is quick and simple",
+  "short_name": "covid19-Selfcert",
+  "name": "covid19-Selfcertification",
+  "description": "covid19-Selfcertification helps you generate and sign the autocertification for your country, remembering the fields for the next time to make is quick and simple",
   "icons": [
     {
     "src": "\/android-icon-36x36.png",

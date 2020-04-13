@@ -114,7 +114,7 @@ export class FranceForm extends React.Component {
                     <p>Type de formulaire</p>
                     <div className="input-group">
                         <select className="custom-select" value={this.state.formType} onChange={this.handleFormTypeChange}>            
-                        <option value="personal">Personnelle</option>
+                        <option value="personal">Personnel</option>
                         <option value="employer">Employeur</option>
                         </select>
                     </div>
@@ -171,12 +171,12 @@ export function FrancePersonalFormHook(props) {
             <form className="needs-validation"  onSubmit={handleSubmit(onSubmit)}>
 
                 <div>
-                    <h3 className="mb-3 title">Formulaire Personnelle</h3>
+                    <h3 className="mb-3 title">Formulaire Personnel</h3>
                 </div>
 
                 <hr className="mb-4"/>
 
-                <h4 className="mb-3">Informations personnelles</h4>
+                <h4 className="mb-3">Informations personnel</h4>
                 <div className="row">
                     <div className="col-md-6 mb-3">
                         <label htmlFor="firstName">Nom</label>
@@ -290,10 +290,10 @@ export function FrancePersonalFormHook(props) {
 
 
                 <hr className="mb-4"/>
-                <h4 className="mb-3">Détails du déménagement</h4>
+                <h4 className="mb-3">Détails du déplacement</h4>
                 <div className="row">
                     <div className="col-md-12 mb-3">
-                        <label htmlFor="reasonNum">Raison du déménagement</label>
+                        <label htmlFor="reasonNum">Raison du déplacement</label>
                         <div className="input-group">
                             <select className="custom-select" name="reasonNum" 
                                 defaultValue={props.cachedData ? props.cachedData.reasonNum : '1'}
@@ -335,7 +335,7 @@ export function FrancePersonalFormHook(props) {
                         </div>
                         {errors.reasonNum &&
                             <div className="form-field-error">
-                                <i>Entrez la raison du déménagement</i>
+                                <i>Entrez la raison du déplacement</i>
                             </div>
                         }              
                     </div>
@@ -421,7 +421,7 @@ export function FrancePersonalFormHook(props) {
                             </div>
                         }
                         <button className="btn btn-outline-secondary" onClick={clearSignature} type="button">
-                            Claire
+                            Effacer
                         </button>
                         <button id="redrawCachedSignaturepersonalFrance" className="btn btn-outline-secondary redraw-signature" onClick={redrawSignatureFromCache} type="button">
                             Redraw
