@@ -542,7 +542,13 @@ export function ItalyFormHook(props) {
 
                 <hr className="mb-4"/>
                 <h4 className="mb-3">Controllo</h4>
-                <p>Puoi lasciare la sezione vuota per ora, e scaricare il documento, torna ad inseriere i dati durante il controllo e scarica la versione aggionata</p>
+                <p>
+                    Puoi lasciare la sezione vuota per ora, e scaricare il documento, 
+                    torna ad inseriere i dati durante il controllo e scarica la versione 
+                    aggionata
+                    <br/>
+                    <i className="suggestion">Nota: gli altri campi rimagono compilati, il sito ricorda i dettagli sulla memoria del tuo dispositivo (a patto che la certificazione sia scaricata)</i>
+                </p>
                 <div className="row">
                     <div className="col-md-4 mb-3">
                         <label htmlFor="checkDate">Data del controllo</label>
