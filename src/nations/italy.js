@@ -41,17 +41,10 @@ export class ItalyForm extends React.Component{
 
     pdfReady(pdfBytes){
         this.simulateLoading(3)
-        // createAndDownloadBlobFile(pdfBytes, 'covid19_autocertificazione')
-        // if(isMobile){
-        //     createAndDownloadBlobFile(pdfBytes, 'covid19_autocertificazione')
-        // }else{
-        //     const url = window.URL.createObjectURL(new Blob([pdfBytes]));
-        //     console.log(url)
-        //     window.open(url);
-        // }
-        const url = window.URL.createObjectURL(new Blob([pdfBytes]));
-        console.log(url)
-        window.open(url);
+        createAndDownloadBlobFile(pdfBytes, 'covid19_autocertificazione')
+        // const url = window.URL.createObjectURL(new Blob([pdfBytes]));
+        // console.log(url)
+        // window.open(url);
     }
 
     simulateLoading(timeoutSeconds){
