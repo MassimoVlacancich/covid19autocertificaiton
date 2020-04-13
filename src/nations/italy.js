@@ -41,7 +41,7 @@ export class ItalyForm extends React.Component{
 
     pdfReady(pdfBytes){
         this.simulateLoading(3)
-        createAndDownloadBlobFile(pdfBytes, 'covid19_autocertificazione')
+        // createAndDownloadBlobFile(pdfBytes, 'covid19_autocertificazione')
         // if(isMobile){
         //     createAndDownloadBlobFile(pdfBytes, 'covid19_autocertificazione')
         // }else{
@@ -49,6 +49,9 @@ export class ItalyForm extends React.Component{
         //     console.log(url)
         //     window.open(url);
         // }
+        const url = window.URL.createObjectURL(new Blob([pdfBytes]));
+        console.log(url)
+        window.open(url);
     }
 
     simulateLoading(timeoutSeconds){
@@ -254,12 +257,12 @@ export function ItalyFormHook(props) {
                         }
                     </div>
                     <div className="col-md-3 mb-3">
-                        <label htmlFor="documentReleasedBy">Rilasciato dal</label>
+                        <label htmlFor="documentReleasedBy">Rilasciato dal comune di</label>
                         <input 
                             type="text" 
                             className="form-control" 
                             id="documentReleasedBy" 
-                            placeholder="Comune di..." 
+                            placeholder="comune di..." 
                             name="documentReleasedBy"
                             defaultValue={props.cachedData ? props.cachedData.documentReleasedBy : ''}
                             ref={register({required: true})} 
@@ -311,7 +314,7 @@ export function ItalyFormHook(props) {
                 </div>
 
                 <hr className="mb-4"/>
-                <h4 className="mb-3">Residenza e domicilio</h4>
+                <h4 className="mb-3">Residenza</h4>
                 <div className="row">
                     <div className="col-md-6 mb-3">
                         <label htmlFor="residence_city">Città</label>
@@ -330,21 +333,7 @@ export function ItalyFormHook(props) {
                             </div>
                         }
                     </div>
-                    <div className="col-md-6 mb-3">
-                        <label htmlFor="domicilio_city">Città</label>
-                        <input 
-                            disabled={reauseResidenceTick === true}
-                            type="text" 
-                            className="form-control" 
-                            id="domicilio_city" 
-                            placeholder={reauseResidenceTick ? reusableResidenceCity : "Città di domicilio"}
-                            defaultValue={props.cachedData ? props.cachedData.domicilio_city : ''}
-                            name="domicilio_city" 
-                            ref={register({required: false})} 
-                        />
-                    </div>
-                </div>
-                <div className="row">    
+                    
                     <div className="col-md-6 mb-3">
                         <label htmlFor="residence_address">Indirizzo</label>
                         <input 
@@ -362,19 +351,12 @@ export function ItalyFormHook(props) {
                             </div>
                         }
                     </div>
+                </div>
+
+                <hr className="mb-4"/>
+                <h4 className="mb-3">Domicilio</h4>
+                <div className="row">
                     <div className="col-md-6 mb-3">
-                        <label htmlFor="domicilio_address">Indirizzo</label>
-                        <input 
-                            disabled={reauseResidenceTick === true}
-                            type="text"
-                            className="form-control" 
-                            id="domicilio_address" 
-                            placeholder={reauseResidenceTick ? reusableResidenceAddress : "Indirizzo di domicilio"}
-                            name="domicilio_address"
-                            defaultValue={props.cachedData ? props.cachedData.domicilio_address : ''}
-                            ref={register({required: false})} 
-                        />
-                        
                         <div className="custom-control custom-checkbox">
                             <input type="checkbox" className="custom-control-input" id="reuseResidence" placeholder="reuseResidence" name="reuseResidence" 
                                 ref={register}
@@ -389,6 +371,35 @@ export function ItalyFormHook(props) {
                         </div>
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="domicilio_city">Città</label>
+                        <input 
+                            disabled={reauseResidenceTick === true}
+                            type="text" 
+                            className="form-control" 
+                            id="domicilio_city" 
+                            placeholder={reauseResidenceTick ? reusableResidenceCity : "Città di domicilio"}
+                            defaultValue={props.cachedData ? props.cachedData.domicilio_city : ''}
+                            name="domicilio_city" 
+                            ref={register({required: false})} 
+                        />
+                    </div>
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="domicilio_address">Indirizzo</label>
+                        <input 
+                            disabled={reauseResidenceTick === true}
+                            type="text"
+                            className="form-control" 
+                            id="domicilio_address" 
+                            placeholder={reauseResidenceTick ? reusableResidenceAddress : "Indirizzo di domicilio"}
+                            name="domicilio_address"
+                            defaultValue={props.cachedData ? props.cachedData.domicilio_address : ''}
+                            ref={register({required: false})} 
+                        />
+                    </div>
+                </div>
+
 
                 <hr className="mb-4"/>
                 <h4 className="mb-3">Dettagli dello spostamento</h4>
@@ -535,6 +546,53 @@ export function ItalyFormHook(props) {
                         />                        
                     </div>
                 </div>
+
+                <hr className="mb-4"/>
+                <h4 className="mb-3">Controllo</h4>
+                <p>Puoi lasciare la sezione vuota per ora, e scaricare il documento, torna ad inseriere i dati durante il controllo e scarica la versione aggionata</p>
+                <div className="row">
+                    <div className="col-md-4 mb-3">
+                        <label htmlFor="checkDate">Data del controllo</label>
+                        <input 
+                            type="date"
+                            className="form-control" 
+                            id="checkDate"
+                            name="checkDate"
+                            defaultValue={props.cachedData ? props.cachedData.checkDate : ''}
+                            ref={register({required: false})} 
+                        />
+                        {isMobile &&
+                            <p className="suggestion">(Android: apri e click sull anno in alto a sinistra per selezionare l'anno)</p>
+                        }
+                        <i>Puoi inserire la data di oggi.</i>
+                    </div>
+                    <div className="col-md-4 mb-3">
+                        <label htmlFor="checkTime">Ora</label>
+                        <input 
+                            type="time"
+                            className="form-control"
+                            id="checkTime"
+                            name="checkTime"
+                            defaultValue={props.cachedData ? props.cachedData.checkTime : new Date()}
+                            ref={register({required: false})}
+                        />
+                        <i>Puoi inserire l'ora in cui sarai in movimento</i>
+                    </div>
+                    <div className="col-md-4 mb-3">
+                        <label htmlFor="checkLocation">Luogo del controllo</label>
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            id="checkLocation" 
+                            placeholder="Supermercato/posta/via verdi..." 
+                            name="checkLocation"
+                            defaultValue={props.cachedData ? props.cachedData.checkLocation : ''}
+                            ref={register({required: false})} 
+                        />
+                        <i>Puoi inserire la tua posizione attuale.</i>
+                    </div>
+                </div>
+
 
                 {/* SIGNATURE */}
                 <hr className="mb-4"/>
@@ -806,12 +864,37 @@ export function enrichPdfItaly(pdfDoc, props) {
             color: rgb(0.95, 0.1, 0.1),
         })
     }
+    
 
     // declaration
     firstPage.drawText(props.declaration, {
         x: 60,
         y: height - 640,
         size: 8,
+        color: blue,
+    })
+
+    // check date
+    firstPage.drawText(props.checkDate, {
+        x: 60,
+        y: height - 730,
+        size: 10,
+        color: blue,
+    })
+
+    // check time
+    firstPage.drawText(props.checkTime, {
+        x: 120,
+        y: height - 730,
+        size: 10,
+        color: blue,
+    })
+
+    // check location
+    firstPage.drawText(props.checkLocation, {
+        x: 170,
+        y: height - 730,
+        size: 10,
         color: blue,
     })
 
