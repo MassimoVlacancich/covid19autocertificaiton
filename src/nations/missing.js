@@ -31,7 +31,7 @@ export function MissingCountryForm(props){
                     <p>
                         Hi! Thanks for getting so far, please provide me with
                         <br/>
-                        <b> your state's name and a link to the self certification document</b>
+                        <b> your country's name and a link to the self certification document</b>
                         <br/>
                         I will add it in 24h!
                     </p>
