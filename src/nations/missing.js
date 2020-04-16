@@ -27,13 +27,13 @@ export function MissingCountryForm(props){
             <form className="needs-validation"  onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="title">
-                    <h3 className="mb-3">Request for a country to be added</h3>
+                    <h3 className="mb-3">Request for supporting a new country</h3>
                     <p>
-                        Hi! Thanks for getting so far, please provide me with
+                        Hi there! Thanks for getting so far. Please provide us with
                         <br/>
-                        <b> your country's name and a link to the self certification document</b>
+                        <b> your country's name and a link to the most up-to-date self-certification document for the country.</b>
                         <br/>
-                        I will add it in 24h!
+                        We will add it in 24h!
                     </p>
                 </div>
 
@@ -57,12 +57,12 @@ export function MissingCountryForm(props){
                         }
                     </div>
                     <div className="col-md-6 mb-3">
-                        <label htmlFor="link">Link to document <i>(Optional)</i></label>
+                        <label htmlFor="link">Link to self-certification form <i>(Optional)</i></label>
                         <input 
                             type="text" 
                             className="form-control" 
                             id="link" 
-                            placeholder="A link to a document or webpage containing it" 
+                            placeholder="A link to the self-certification document or webpage containing it" 
                             name="link"
                             ref={register({required: false})} 
                         />
@@ -76,7 +76,7 @@ export function MissingCountryForm(props){
                     }
                     {providedCountry &&
                         <span className="your-country">{' ' + providedCountry}</span>
-                    }
+                    }!
                 </button>
             </form>
         </div>
