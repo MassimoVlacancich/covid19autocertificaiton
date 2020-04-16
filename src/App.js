@@ -36,15 +36,16 @@ export default class App extends React.Component {
 
     return(
       <div>
-
         <div className="container">
-
           <div className="py-5 text-center app-header">
             <img className="d-block mx-auto mb-4"
-              src={process.env.PUBLIC_URL + '/logo.png'} alt="" width="128" height="128"/>
-            
-            <h2 className="title">covid19-Selfcertification</h2>
-            
+                 src={process.env.PUBLIC_URL + '/logo.png'} 
+                 alt="Covid-19 Self-Cert Logo" 
+                 width="128" 
+                 height="128"/>
+
+            <h2 className="title">Covid-19 Self-Certification</h2>
+
             <div className="select-country">
               <label htmlFor="selectCountry">Select your country</label>
               <div className="input-group">
@@ -56,15 +57,11 @@ export default class App extends React.Component {
                 </select>
               </div>
             </div>
-
             <div className="intro">
               <Intro nation={this.state.nation} />
             </div>
           </div>    
-
-          <NationForm
-            nation={this.state.nation} />
-
+          <NationForm nation={this.state.nation} />
         </div>
 
         <footer className="footer">
@@ -90,13 +87,15 @@ export default class App extends React.Component {
                   </a>
                 </div>
               </div>
-              
+
               <p className="help">
-                With the help of <a href="https://www.linkedin.com/in/riccardo-bellatalla/">Riccardo Bellatalla </a>
+                Built with the help of 
+                <a href="https://www.linkedin.com/in/riccardo-bellatalla/">Riccardo Bellatalla </a> and
+                <a href="https://www.linkedin.com/in/ivanprocaccini/">Ivan Procaccini</a>
               </p>
 
               <p className="disclaimer">
-                I do not hold any responsibility for the documents created on this platform nor the way these may be employed
+                I do not hold any responsibility for the documents created on this platform or the way these may be used.
               </p>
             </div>
           </div>
