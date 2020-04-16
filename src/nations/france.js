@@ -347,7 +347,7 @@ export function FrancePersonalFormHook(props) {
                             type="text" 
                             className="form-control" 
                             id="location" 
-                            placeholder="localisation actuelle" 
+                            placeholder="Localisation actuelle" 
                             name="location"
                             defaultValue={props.cachedData ? props.cachedData.location : ''}
                             ref={register({required: true})} 
@@ -631,7 +631,7 @@ export function FranceEmployerFormHook(props) {
                             type="text" 
                             className="form-control" 
                             id="job" 
-                            placeholder="activité professionnelle" 
+                            placeholder="Activité professionnelle" 
                             name="job"
                             defaultValue={props.cachedData ? props.cachedData.job : ''}
                             ref={register({required: true})} 
@@ -685,7 +685,7 @@ export function FranceEmployerFormHook(props) {
                             type="text" 
                             className="form-control" 
                             id="duration" 
-                            placeholder="durée..." 
+                            placeholder="Durée..." 
                             name="duration"
                             defaultValue={props.cachedData ? props.cachedData.duration : ''}
                             ref={register({required: true})} 
@@ -702,7 +702,7 @@ export function FranceEmployerFormHook(props) {
                             type="text" 
                             className="form-control" 
                             id="stamp" 
-                            placeholder="nom" 
+                            placeholder="Nom" 
                             name="stamp"
                             defaultValue={props.cachedData ? props.cachedData.stamp : ''}
                             ref={register({required: true})} 
@@ -725,7 +725,7 @@ export function FranceEmployerFormHook(props) {
                             type="text" 
                             className="form-control" 
                             id="subscriptionLocation" 
-                            placeholder="localisation actuelle" 
+                            placeholder="Localisation actuelle" 
                             name="subscriptionLocation"
                             defaultValue={props.cachedData ? props.cachedData.subscriptionLocation : ''}
                             ref={register({required: true})} 
