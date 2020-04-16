@@ -198,7 +198,7 @@ export function ItalyFormHook(props) {
                             </div>
                         }
                         {isMobile &&
-                            <p className="suggestion">(Android: apri e click sull anno in alto a sinistra per selezionare l'anno)</p>
+                            <p className="suggestion">Android: apri e clicca sull'anno in alto a sinistra per selezionare l'anno.</p>
                         }
                     </div>
                     <div className="col-md-6 mb-3">
@@ -282,7 +282,7 @@ export function ItalyFormHook(props) {
                             </div>
                         }
                         {isMobile &&
-                            <p className="suggestion">(Android: apri e click sull anno in alto a sinistra per selezionare l'anno)</p>
+                            <p className="suggestion">Android: apri e clicca sull'anno in alto a sinistra per selezionare l'anno.</p>
                         }
                     </div>
                 </div>
@@ -561,7 +561,7 @@ export function ItalyFormHook(props) {
                             ref={register({required: false})} 
                         />
                         {isMobile &&
-                            <p className="suggestion">(Android: apri e click sull anno in alto a sinistra per selezionare l'anno)</p>
+                            <p className="suggestion">Android: apri e clicca sull'anno in alto a sinistra per selezionare l'anno.</p>
                         }
                         <i>Puoi inserire la data di oggi.</i>
                     </div>

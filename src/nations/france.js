@@ -230,7 +230,7 @@ export function FrancePersonalFormHook(props) {
                             </div>
                         }
                         {isMobile &&
-                            <p className="suggestion">(Android:ouvrez et cliquez sur l'année en haut à gauche pour sélectionner l'année)</p>
+                            <p className="suggestion">Android: ouvrez et cliquez sur l'année en haut à gauche pour sélectionner l'année.</p>
                         }
                     </div>
                     <div className="col-md-6 mb-3">
@@ -374,7 +374,7 @@ export function FrancePersonalFormHook(props) {
                             </div>
                         }
                         {isMobile &&
-                            <p className="suggestion">(Android:ouvrez et cliquez sur l'année en haut à gauche pour sélectionner l'année)</p>
+                            <p className="suggestion">Android: ouvrez et cliquez sur l'année en haut à gauche pour sélectionner l'année.</p>
                         }
                     </div>
                     <div className="col-md-4 mb-3">
