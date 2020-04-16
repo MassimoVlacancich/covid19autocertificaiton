@@ -255,7 +255,7 @@ export function ItalyFormHook(props) {
                             type="text" 
                             className="form-control" 
                             id="documentReleasedBy" 
-                            placeholder="comune di..." 
+                            placeholder="Comune di..." 
                             name="documentReleasedBy"
                             defaultValue={props.cachedData ? props.cachedData.documentReleasedBy : ''}
                             ref={register({required: true})} 
@@ -493,7 +493,7 @@ export function ItalyFormHook(props) {
                                 defaultValue={props.cachedData ? props.cachedData.reasonNum : '1'}
                                 ref={register({ required: true })}>
 
-                                <option value="1">comprovate esigenze lavorative</option>
+                                <option value="1">Comprovate esigenze lavorative</option>
                                 <option value="2">assoluta urgenza (per trasferimenti in comune diverso)</option>
                                 <option value="3">
                                     situazione di necessità (per spostamenti all’interno dello stesso comune o che rivestono carattere di quotidianità)
@@ -510,12 +510,12 @@ export function ItalyFormHook(props) {
                 </div>
                 <div className="row">
                     <div className="col-md-6 mb-3">
-                        <label htmlFor="declaration">Dichiarzione (spiega il perchè dello spostamento) </label>
+                        <label htmlFor="declaration">Dichiarazione (spiega il perché dello spostamento) </label>
                         <textarea 
                             type="text" 
                             className="form-control"
                             id="declaration"
-                            placeholder="(lavoro presso …, devo effettuare una visita medica, urgente assistenza a congiunti o a persone con disabilità, o esecuzioni di interventi assistenziali in favore di persone in grave stato di necessità, obblighi di affidamento di minori, denunce di reati, rientro dall’estero, altri motivi particolari, etc….)."
+                            placeholder="Lavoro presso …, devo effettuare una visita medica, urgente assistenza a congiunti o a persone con disabilità, o esecuzioni di interventi assistenziali in favore di persone in grave stato di necessità, obblighi di affidamento di minori, denunce di reati, rientro dall’estero, altri motivi particolari, etc…."
                             name="declaration"
                             defaultValue={props.cachedData ? props.cachedData.declaration : ''}
                             ref={register({required: true})} 
@@ -532,7 +532,7 @@ export function ItalyFormHook(props) {
                             type="text" 
                             className="form-control"
                             id="provvedimenti"
-                            placeholder="lo spostamento rientra in uno dei casi consentiti dai medesimi provvedimenti (indicare quali se a conoscenza)"
+                            placeholder="Lo spostamento rientra in uno dei casi consentiti dai medesimi provvedimenti (indicare quali se a conoscenza)."
                             name="provvedimenti"
                             defaultValue={props.cachedData ? props.cachedData.provvedimenti : ''}
                             ref={register({required: false})} 
@@ -543,11 +543,11 @@ export function ItalyFormHook(props) {
                 <hr className="mb-4"/>
                 <h4 className="mb-3">Controllo</h4>
                 <p>
-                    Puoi lasciare la sezione vuota per ora, e scaricare il documento, 
-                    torna ad inseriere i dati durante il controllo e scarica la versione 
-                    aggionata
+                    Puoi lasciare questa sezione vuota per ora e scaricare questa prima versione del modulo. 
                     <br/>
-                    <i className="suggestion">Nota: gli altri campi rimagono compilati, il sito ricorda i dettagli sulla memoria del tuo dispositivo (a patto che la certificazione sia scaricata)</i>
+                    Potrai sempre tornare ad inserire i dati durante il controllo e scaricare la versione finale.
+                    <br/>
+                    <i className="suggestion">Nota: il sito salva temporaneamente i dettagli del modulo compilato sulla memoria del tuo dispositivo con ogni download.</i>
                 </p>
                 <div className="row">
                     <div className="col-md-4 mb-3">
@@ -575,7 +575,7 @@ export function ItalyFormHook(props) {
                             defaultValue={props.cachedData ? props.cachedData.checkTime : new Date()}
                             ref={register({required: false})}
                         />
-                        <i>Puoi inserire l'ora in cui sarai in movimento</i>
+                        <i>Puoi inserire l'ora in cui sarai in movimento.</i>
                     </div>
                     <div className="col-md-4 mb-3">
                         <label htmlFor="checkLocation">Luogo del controllo</label>
@@ -583,7 +583,7 @@ export function ItalyFormHook(props) {
                             type="text" 
                             className="form-control" 
                             id="checkLocation" 
-                            placeholder="Supermercato/posta/via verdi..." 
+                            placeholder="Supermercato/posta/via Verdi..." 
                             name="checkLocation"
                             defaultValue={props.cachedData ? props.cachedData.checkLocation : ''}
                             ref={register({required: false})} 
@@ -628,7 +628,7 @@ export function ItalyFormHook(props) {
 
                 </div>
 
-                <button className="btn btn-primary btn-lg btn-block" type="submit">Download Certificazione</button>
+                <button className="btn btn-primary btn-lg btn-block" type="submit">Scarica Autocertificazione</button>
             </form>
         </div>
     )

@@ -4,36 +4,43 @@ import '../App.css'
 export function Intro(props) {
     if(props.nation === 'italy'){
         return(
-            <div>
-                Questo sito è nato con l'intento di auitare i cittadini ad <b>ottenere un autocertificazione per il proprio stato in modo semplice e veloce.</b>
-                <br/>
-                <u>Il sito ricorda i campi immessi per rendere piu' rapido il riempimento del form la volta successiva </u>
-                <br/>
-                <div className="disclaimer">
-                   <i>il sito non utilizza cookies e non salva nessuna informazione personale, i campi riempieti vegono temporaneamente salvati sulla memoria del tuo dispositivo</i>
-                </div>
-            </div>
+          <div>
+            <h3>
+              Compila e scarica l'autocertificazione in maniera semplice e veloce.
+            </h3>
+            <p>
+              I campi immessi verranno salvati nella memoria del tuo dispositivo per rendere più rapido il riempimento del modulo in futuro.
+            <br/>
+            Il sito non utilizza cookies e non salva alcuna informazione personale.
+              </p>
+          </div>
         )
     }
     else if(props.nation === 'france'){
         return(
             <div>
-                <b>Ce site a été créé dans l'intention d'aider les citoyens à créer leur attestation de déplacement de manière simple et rapide.</b>
+              <h3>
+                Remplissez et téléchargez l'auto-certification rapidement et facilement.
+              </h3>
+              <p>
+                Les champs que vous entrez seront enregistrés dans la mémoire de votre appareil pour accélérer le remplissage du formulaire à l'avenir. 
                 <br/>
-                <u> site n'utilise pas de cookies et n'enregistre aucune information personnelle, les champs renseignés sont temporairement enregistrés dans la mémoire de votre appareil</u>
-                <br/>
-                <div className="disclaimer">
-                   <i>le site n'utilise pas de cookies et n'enregistre aucune information personnelle, les champs renseignés sont temporairement enregistrés dans la mémoire de votre appareil</i>
-                </div>
+                Le site n'utilise pas de cookies et n'enregistre aucune information personnelle.
+              </p>
             </div>
         )
     }
     else{
         return (
             <div>
-                This website was born with the intention of helping citiziend to easily obtain the autocertificaiton for their country.
-                The website stores previosly entered fields to allow a quicker fill in the next time.
-                NOTE: this website does not use cookies nor stores any personal information, the fields are cached locally on your device
+              <h3>
+                Fill and download your self-certification easily. 
+              </h3>
+              <p>
+                The values you enter in each field will be saved in your device's memory to make the form quicker to fill in the future.
+                <br/>
+                The site doesn't use cookies and won't store any of your personal information.
+              </p>
             </div>
         )
     }
@@ -59,9 +66,4 @@ export function dataURItoArrayBuffer(dataURI) {
   }
 
   return ab
-
-//   // write the ArrayBuffer to a blob, and you're done
-//   var blob = new Blob([ab], {type: mimeString});
-//   return blob;
-
 }
