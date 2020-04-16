@@ -90,8 +90,8 @@ export default class App extends React.Component {
 
               <p className="help">
                 Built with the help of 
-                <a href="https://www.linkedin.com/in/riccardo-bellatalla/">Riccardo Bellatalla </a> and
-                <a href="https://www.linkedin.com/in/ivanprocaccini/">Ivan Procaccini</a>
+                <a href="https://www.linkedin.com/in/riccardo-bellatalla/"> Riccardo Bellatalla </a> and
+                <a href="https://www.linkedin.com/in/ivanprocaccini/"> Ivan Procaccini</a>
               </p>
 
               <p className="disclaimer">
