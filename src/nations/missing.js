@@ -27,7 +27,7 @@ export function MissingCountryForm(props){
             <form className="needs-validation"  onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="title">
-                    <h3 className="mb-3">Request for supporting a new country</h3>
+                    <h3 className="mb-3">Request support for a new country</h3>
                     <p>
                         Hi there! Thanks for getting so far. Please provide us with
                         <br/>
