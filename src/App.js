@@ -11,7 +11,7 @@ export default class App extends React.Component {
     // try top get cached data
     var cachedNationChoice = localStorage.getItem('nationChoice');
     if(cachedNationChoice === null) {
-      cachedNationChoice = 'italy'
+      cachedNationChoice = 'spain'
     }
 
     this.state = {
@@ -51,6 +51,7 @@ export default class App extends React.Component {
                 <select className="custom-select" value={this.state.nation} onChange={this.handleNationChange}>            
                   <option value="italy">Italia</option>
                   <option value="france">France</option>
+                  <option value="spain">España</option>
                   <option value="add">Add a country</option>
                 </select>
               </div>

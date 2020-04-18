@@ -28,6 +28,18 @@ export function Intro(props) {
             </div>
         )
     }
+    else if(props.nation === 'spain'){
+        return(
+            <div>
+                Este sitio web fue creado con la intención de ayudar a los ciudadanos a <b> obtener una autocertificación para su estado de una manera simple y rápida. </b>
+                <br/>
+                <u> El sitio recuerda los campos ingresados ​​para acelerar el llenado del formulario la próxima vez </u>                <br/>
+                <div className="disclaimer">
+                    <i> el sitio no utiliza cookies y no guarda ninguna información personal, los campos rellenos se guardan temporalmente en la memoria de su dispositivo </i> 
+                </div>
+            </div>
+        )
+    }
     else{
         return (
             <div>
