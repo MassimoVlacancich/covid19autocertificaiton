@@ -8,6 +8,7 @@ policies, this is required to formally motivate one's movements.
 |-------------------|-----------|--------------|
 | Italy | Personal | 13/04/2020 |
 | France | Personal, Employer | 13/04/2020 |
+| Spain | Personal, Employer | 17/04/2020 |
 
 ## Running the application locally
 To try out the application locally, clone the project and run the following from
